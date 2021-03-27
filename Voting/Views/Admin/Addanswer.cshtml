@@ -1,0 +1,44 @@
+﻿@model Voting.Models.Answer
+
+@using (Ajax.BeginForm("Addanswer", "Admin", FormMethod.Post,
+    new AjaxOptions
+    {
+        UpdateTargetId = "d1",
+        InsertionMode = InsertionMode.Replace
+
+
+    }, new { @class = "" }))
+{
+
+<table class="table table-responsive">
+
+    <tr>
+        <td>
+            <label>@ViewBag.question.QuestionTitle</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayName("Insert Answer")
+        </td>
+        <td>
+            @Html.TextAreaFor(n => n.AnswerTitle, new { style = "width:700px;hight:50px;font-size:bold;" })
+        </td>
+    </tr>
+
+    @{ int i = 1;}
+    @foreach (var item in (List<Voting.Models.Answer>)ViewBag.answer)
+    {
+            <tr>
+                <td>
+                    @i-@item.AnswerTitle
+                </td>
+            </tr>
+            i++;
+      }
+        
+
+    </table>
+    <input type="hidden" name="QuestionId" value="@ViewBag.question.ID" />
+    <input type="submit" value="Add other Answer" class="btn btn-info" />
+}

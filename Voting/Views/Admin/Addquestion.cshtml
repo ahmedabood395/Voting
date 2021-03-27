@@ -1,0 +1,25 @@
+﻿@model Voting.Models.Question
+
+@using (Ajax.BeginForm("Addquestion", "Admin", FormMethod.Post,
+    new AjaxOptions
+    {
+        UpdateTargetId = "d1",
+        InsertionMode = InsertionMode.Replace
+
+
+    }, new { @class = "" }))
+{
+
+    <table class="table table-responsive">
+        <tr>
+            <td>
+                @Html.DisplayName("Insert The Question")
+            </td>
+            <td>
+                @Html.TextAreaFor(n => n.QuestionTitle, new { style = "width:700px;hight:50px;font-size:bold;" })
+            </td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Add Answer" class="btn btn-info" />
+}

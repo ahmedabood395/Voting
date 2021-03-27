@@ -1,0 +1,124 @@
+html, body {
+    height:100%;
+    width:100%;
+    font-family: 'poppins', sans-serif;
+    color: #222;
+}
+.navbar{
+    padding: .8rem;
+}
+.navbar-nav li {
+    padding-right: 20px;
+}
+.nav-link{
+    font-size: 1.1em !important;
+}
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+}
+.carousel-caption h1 {
+    text-shadow: 1px 1px 15px #000;
+}
+.dropdown{
+    padding: 30px;
+    display: inline-block;
+}
+.dvcon{
+    /*width: 1000px;*/
+   /* opacity: .75;*/
+ background-color: rgba(0, 0, 0, 0.1);
+    opacity: 1;
+ /*background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0.8;*/
+    overflow: visible;
+}
+.btnsearch{
+    background-color: green;
+    margin-left: 30px;
+}
+/*.footer {
+    clear: left;
+    top: 0;
+    height: 150px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    text-align: center;
+    padding-top: 50px;
+}*/
+
+.btn-about1 {
+    background-color: rgb(1, 57, 241);
+    color:white;
+    border: 1px solid white;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+    display: inline-block;
+    line-height: 2;
+    width: 80px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 10px;
+    text-decoration: none;
+
+}
+
+.btn-about1:hover {
+    background-color: crimson;
+    color: white;
+    border: 1px solid crimson;
+}
+
+.dif {
+    color: crimson;
+    font-size: 16px;
+}
+#spn{
+    color: white;
+}
+.bg {
+    /* The image used */
+    background-image: url("image/backgroundPhoto2.jpg");
+  
+    /* Full height */
+    height: 93%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .5px;
+}
+.templt
+{
+    margin: auto;
+    position: absolute;
+    top: 170px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+    border: 3px solid silver;
+    background-color: lavender;
+    height: 550px;
+    width: 500px;
+    border-radius: 20px;
+    opacity: .8;
+    box-shadow: 5px 5px 1px silver;
+}
+.txtarea{
+    width: 100px;
+    height: 70px;
+}
+.btnform
+{
+    width: 100px;
+    font-size: 20px;
+    font-weight: bold;
+
+}

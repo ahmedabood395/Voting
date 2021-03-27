@@ -1,0 +1,44 @@
+﻿@model List<Voting.Models.Answer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form method="post">
+    <table class="table table-responsive">
+        <tr>
+            <td>
+                <h1>@ViewBag.question.QuestionTitle</h1>
+            </td>
+        </tr>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+
+            <tr>
+                <td>
+                    <div style="background-color: silver;width: 300px;height: 40px;display: inline-block;">
+                        <h4 style="text-align:center;">@Model[i].AnswerTitle</h4>
+                    </div>
+                    
+                    <input id="d" type="checkbox" name="ans[@i].ID" value="@Model[i].ID" />
+                    <input id="d" type="hidden" name="ans[@i].ID" value="0" />
+                    <input id="d" type="hidden" name="id" value="@Model[0].QuestionId" />
+                    
+                </td>
+             </tr>
+        }
+    </table>
+    @if (Session["Error"] == null)
+    {
+    <input type="submit" value="Submit" class="btn btn-primary" />
+    }
+    else
+    {
+        <span class="danger">@Session["Error"]</span>
+
+        Session["Error"]= null;
+
+        @Html.ActionLink("Cancle", "Edit", "User", new {id=ViewBag.question.ID },new { @class = "btn btn-primary" })
+    }
+</form>
+

@@ -1,0 +1,33 @@
+﻿@model List<Voting.Models.Question>
+
+<table class="table" border="1">
+    <thead class="thead-dark bg-blue text-center">
+        <tr>
+            <th scope="col">Number</th>
+            <th scope="col">QuestionTitle</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="alert-success">
+        @{ int i = 1;}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@i</th>
+                <td>@item.QuestionTitle</td>
+                <td>
+
+                    @Ajax.ActionLink("Show", "ShowVote", new {id=item.ID},
+              new AjaxOptions()
+              {
+                  UpdateTargetId = "d1",
+                  InsertionMode = InsertionMode.Replace,
+                  OnComplete = "show"
+              }, new { style = "color:yellow;font:bold;" }
+              )
+                </td>
+            </tr>
+            i++;
+        }
+    </tbody>
+</table>

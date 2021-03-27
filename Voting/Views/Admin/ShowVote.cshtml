@@ -1,0 +1,28 @@
+﻿@model List<Voting.Models.Answer>
+
+<table class="table table-responsive">
+    <tr>
+        <td>
+            <h3>@ViewBag.question.QuestionTitle</h3>
+        </td>
+    </tr>
+    @{int i = 0;
+        }
+        @foreach (var item in Model)
+        {
+            if (ViewBag.TotalCount != 0) {
+
+                i = (item.Count * 100) / ViewBag.TotalCount;
+            }
+     <tr>
+         <td>
+             <h4>@item.AnswerTitle</h4>
+             <div style="background-color: silver;width: 200px;height: 30px;display: inline-block;border-radius: 5px;">
+                 <div style="background-color:orange;width:@i%;height:100%;border-radius:5px;"></div>
+             </div>
+             <span>@i%</span>
+         </td>
+     </tr>
+ }
+</table>
+
